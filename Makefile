@@ -1,5 +1,11 @@
 SHELL='/bin/bash'
 
+server-up:
+	docker-compose \
+		--file docker/docker-compose.yml \
+		up \
+		--build \
+
 npm-install:
 	docker run \
 			--rm \
