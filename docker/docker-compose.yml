@@ -1,0 +1,8 @@
+version: '2'
+services:
+  front-end:
+    image: node:12.4.0
+    working_dir: /app
+    command: npm start
+    volumes:
+      - ../:/app
