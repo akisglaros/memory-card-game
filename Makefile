@@ -1,6 +1,7 @@
 SHELL='/bin/bash'
 
 server-up:
+	make npm-install
 	docker-compose \
 		--file docker/docker-compose.yml \
 		up \
