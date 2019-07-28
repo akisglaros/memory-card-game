@@ -14,8 +14,8 @@ npm-install:
 			--interactive \
 			--workdir /app \
 			--volume "$(PWD)":/app \
-			--user $(shell id -u):$(shell id -g) \
-			node:12.4.0 npm install
+			--user 1000:1000 \
+			node:12.7.0 npm install
 
 npm-install-package:
 	docker run \
@@ -24,8 +24,8 @@ npm-install-package:
 			--interactive \
 			--workdir /app \
 			--volume "$(PWD)":/app \
-			--user $(shell id -u):$(shell id -g) \
-			node:12.4.0 npm install $(PACKAGE)
+			--user 1000:1000 \
+			node:12.7.0 npm install $(PACKAGE)
 
 npm-install-dev-package:
 	docker run \
@@ -34,8 +34,8 @@ npm-install-dev-package:
 			--interactive \
 			--workdir /app \
 			--volume "$(PWD)":/app \
-			--user $(shell id -u):$(shell id -g) \
-			node:12.4.0 npm install --save-dev $(PACKAGE)
+			--user 1000:1000 \
+			node:12.7.0 npm install --save-dev $(PACKAGE)
 
 npm-uninstall-package:
 	docker run \
@@ -44,8 +44,8 @@ npm-uninstall-package:
 			--interactive \
 			--workdir /app \
 			--volume "$(PWD)":/app \
-			--user $(shell id -u):$(shell id -g) \
-			node:12.4.0 npm uninstall $(PACKAGE)
+			--user 1000:1000 \
+			node:12.7.0 npm uninstall $(PACKAGE)
 
 npm-test:
 	docker run \
@@ -54,5 +54,5 @@ npm-test:
 			--interactive \
 			--workdir /app \
 			--volume "$(PWD)":/app \
-			--user $(shell id -u):$(shell id -g) \
-			node:12.4.0 npm test
+			--user 1000:1000 \
+			node:12.7.0 npm test
