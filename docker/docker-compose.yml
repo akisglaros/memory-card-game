@@ -1,8 +1,10 @@
 version: '2'
 services:
   front-end:
-    image: node:12.4.0
+    image: node:12.7.0
     working_dir: /app
     command: npm start
+    ports:
+      - 3000:3000
     volumes:
       - ../:/app
